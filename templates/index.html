@@ -1,36 +1,42 @@
 {% extends "layout.html" %}
 {% block title %}Index{% endblock %}
 {% block content %}
-    <form method="POST">
+    {% if user %}
+    <div class="alert alert-success">
+        <b>Record Created</b> <br>
+        {{ user }}
+    </div>
+    {% endif %}
+    <form method="POST" action="/">
         <div class="row">
             <div class="col-12 col-md-6 mb-3">
-                <label for="first_name">First Name</label>
-                <input type="text" class="form-control" id="first_name" required>
+                <label for="firstname">First Name</label>
+                <input type="text" class="form-control" id="firstname" name="firstname" required>
                 <div class="invalid-feedback">First name is required</div>
             </div>
             <div class="col-12 col-md-6 mb-3">
-                <label for="last_name">Last Name</label>
-                <input type="text" class="form-control" id="last_name" required>
+                <label for="lastname">Last Name</label>
+                <input type="text" class="form-control" id="lastname" name="lastname" required>
                 <div class="invalid-feedback">Last name is required</div>
             </div>
             <div class="col-12 mb-3">
                 <label for="email">Email</label>
-                <input type="email" class="form-control" id="email" required>
+                <input type="email" class="form-control" id="email" name="email" required>
                 <div class="invalid-feedback">Email is required</div>
             </div>
             <div class="col-6 col-md-4 mb-3">
                 <label for="age">Age</label>
-                <input type="number" class="form-control" id="age" required>
+                <input type="number" class="form-control" id="age" name="age" required>
                 <div class="invalid-feedback">Age is required</div>
             </div>
             <div class="col-6 col-md-4 mb-3">
                 <label for="location">Location</label>
-                <input type="text" class="form-control" id="location" required>
+                <input type="text" class="form-control" id="location" name="location" required>
                 <div class="invalid-feedback">Location is required</div>
             </div>
             <div class="col-12 col-md-4 mb-3">
                 <label for="date">Date</label>
-                <input type="date" class="form-control" id="date" required>
+                <input type="date" class="form-control" id="date" name="date" required>
                 <div class="invalid-feedback">Date is required</div>
             </div>
             <div class="col-12 mb-3">
